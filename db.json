@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "accessory":[
+    {
+      "id":1,
+      "name":"firstAccessory",
+      "price": 30.5,
+      "quantity":2
+
+    },    {
+      "id":2,
+      "name":"secondeAccessory",
+      "price": 30.5,
+      "quantity":2
+
+    },    {
+      "id":3,
+      "name":"thrirdAccessory",
+      "price": 30.5,
+      "quantity":2
+      
+    }
+
+  ]
+  ,
+  "ProductAccessory":[
+    {
+      "id":1,
+      "name":"firstAccessory",
+      "price": 30.5,
+      "quantity":2
+
+    },    {
+      "id":2,
+      "name":"firstAccessory",
+      "price": 30.5,
+      "quantity":2
+      
+    }
+    
+  ]
+}

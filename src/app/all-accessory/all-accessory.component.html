@@ -1,0 +1,17 @@
+<div class="card" style="width: 18rem;" *ngFor="let a of Accessorys; let i=index">
+	<img class="card-img-top" src="..." alt="Card image cap">
+	<div class="card-body">
+	  <h5 class="card-title">{{a.name}}</h5>
+	  <p class="card-text">
+	
+	
+	  {{ a.id }}
+	  {{ a.quantity }}
+	  {{ a.price }}
+	
+	
+</p>
+
+	  <a  class="btn btn-primary" (click)=" addToMainProduct(a)">Go somewhere</a>
+	</div>
+  </div>

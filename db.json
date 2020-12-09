@@ -21,19 +21,22 @@
       "id":1,
       "name":"firstAccessory",
       "price": 30.5,
-      "quantity":2
+      "quantity":2,
+      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
 
     },    {
       "id":2,
       "name":"secondeAccessory",
       "price": 30.5,
-      "quantity":2
+      "quantity":2,
+      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
 
     },    {
       "id":3,
       "name":"thrirdAccessory",
       "price": 30.5,
-      "quantity":2
+      "quantity":2,
+      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
       
     }
 
@@ -44,15 +47,22 @@
       "id":1,
       "name":"firstAccessory",
       "price": 30.5,
-      "quantity":2
+      "quantity":2,
+      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
 
     },    {
       "id":2,
       "name":"firstAccessory",
       "price": 30.5,
-      "quantity":2
+      "quantity":2,
+      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
       
     }
     
+  ],
+  "orders":[
+    
   ]
+
+
 }

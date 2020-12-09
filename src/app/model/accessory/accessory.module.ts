@@ -14,5 +14,6 @@ export class Accessory {
   name:string;
 price:number;
 quantity : number;
+image: string;
 
  }

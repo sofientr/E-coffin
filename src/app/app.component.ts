@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { AllAccessoryComponent } from './all-accessory/all-accessory.component';
-import { Accessory } from './model/Accessory/Accessory.module';
 import { ProductOrder } from './model/accessory/OrderAccessory';
-import { ProductOrders } from './model/accessory/ProductOrder';
+import { OrdersComponent } from './orders/orders.component';
+import { ProductAccessoryComponent } from './product-accessory/product-accessory.component';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +11,21 @@ import { ProductOrders } from './model/accessory/ProductOrder';
 })
 export class AppComponent {
 
-  @ViewChild('AllAccessory')
-  AllAccessory: AllAccessoryComponent;
+
   title = 'E-coffin';
   orderFinished = false;
+
+
+  @ViewChild('productsC')
+  productsC:AllAccessoryComponent;
   
+  @ViewChild('ordersC')
+  ordersC: OrdersComponent;
+
+
+  @ViewChild('shoppingCartC')
+  shoppingCartC: ProductAccessoryComponent;
+
 
   Accessorys : ProductOrder[]=[];
 
@@ -24,14 +34,22 @@ export class AppComponent {
    acc.product={...accessory};
    acc.quantity=0;
     this.Accessorys.push(acc)
-    this.calculateTotal();
+    //this.calculateTotal();
     
   }
   finishOrder(data) {
     this.orderFinished = data.orderFinished;
 }
+reset() {
+  this.orderFinished = false;
+  this.productsC.reset();
+  this.shoppingCartC.reset();
+  this.ordersC.paid = false;
+
+}
+/*
 calculateTotal(){
   const count = this.Accessorys.reduce((counter, { product,quantity }) => true ? counter +=product.price*quantity : counter, 0);
-}
+}*/
 }
  

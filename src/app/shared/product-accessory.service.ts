@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Accessory } from '../model/Accessory/Accessory.module';
 import {HttpClient, HttpHeaders}  from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProductOrders } from '../model/accessory/ProductOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class ProductAccessoryService {
     })
   }
   urlAccessorys : string ="http://localhost:3000/ProductAccessory";
+  ordersUrl:string="http://localhost:3000/orders";
   Accessorys : Accessory[]/*=[
     {id: 1, name: "T-shirt 1", price: 18, quantity: 0, }, 
     {id: 2, name: "T-shirt 2", price: 21, quantity: 10, }, 
@@ -23,10 +25,17 @@ export class ProductAccessoryService {
   getAccessorys() : Accessory[]{
     return this.Accessorys;
   }
-  getAccessorysJson() : Observable<Accessory[]>{
+  getAllAccessorys() : Observable<Accessory[]>{
     //return this.http.get<Accessory[]>("/assets/Accessorys.json");
     return this.http.get<Accessory[]>(this.urlAccessorys);
   }
+
+  saveOrder(order: ProductOrders) {
+    return this.http.post(this.ordersUrl, order);
+}
+
+
+
   addAccessory (Accessory: Accessory): Observable<Accessory> {
     return this.http.post<Accessory>(this.urlAccessorys, Accessory, this.httpOptions);}
 

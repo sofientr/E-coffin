@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Accessory} from './accessory.module';
+import { ProductOrder } from './OrderAccessory';
 
 
 @NgModule({
@@ -10,5 +11,5 @@ import {Accessory} from './accessory.module';
   ]
 })
 export class ProductOrders {
-    productOrders: Accessory []=[];
+    productOrders: ProductOrder  []=[];
 }

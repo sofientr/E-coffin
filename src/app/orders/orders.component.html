@@ -20,7 +20,7 @@
             </li>
         </ul>
 
-        <button class="btn btn-light btn-block" 
+        <button class="btn btn-light btn-block" [disabled]="data.length == 0" (click)="finishOrder()"
             >Checkout
         </button>
     </div>

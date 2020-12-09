@@ -44,7 +44,7 @@ export class ProductAccessoryComponent implements OnInit {
     else return 'green';
   }
   ngOnInit(): void { //this.Accessorys =this.as.getAccessorys();
-    this.as.getAccessorysJson().subscribe(next => this.Accessorys = next);
+    this.as.getAllAccessorys().subscribe(next => this.Accessorys = next);
   }
   addAccessory(p: Accessory) {
     this.Accessorys.push(p);
@@ -54,7 +54,7 @@ export class ProductAccessoryComponent implements OnInit {
   }
 
   deleteP(p: Accessory) {
-    this.as.deleteAccessory(p).subscribe(next => this.as.getAccessorysJson().subscribe(next => this.Accessorys = next));
+    this.as.deleteAccessory(p).subscribe(next => this.as.getAllAccessorys().subscribe(next => this.Accessorys = next));
   }
   finishOrder() {
     this.orderFinished = true;
@@ -65,4 +65,10 @@ export class ProductAccessoryComponent implements OnInit {
 
     //this.percent = percent;
   }
+  reset() {
+    this.orderFinished = false;
+    /*this.orders = new ProductOrders();
+    this.orders.productOrders =[]    this.loadTotal();*/
+    this.total = 0;
+}
 }

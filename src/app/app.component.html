@@ -6,10 +6,12 @@
       </app-main-product>
     </div>
     <div class="col">
-      <app-product-accessory [joke]= "Accessorys"></app-product-accessory>
+      <app-product-accessory [acc]= "Accessorys" (onOrderFinished)="finishOrder($event)"  [hidden]="orderFinished"></app-product-accessory>
     </div>
   </div>
 </div>
 
-<app-all-accessory (accAdded)="accAdded($event) "   ></app-all-accessory>
+<app-all-accessory (accAdded)="accAdded($event) " [hidden]="orderFinished"  ></app-all-accessory>
+
+<app-orders [hidden]="!orderFinished"></app-orders>
  

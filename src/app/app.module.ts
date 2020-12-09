@@ -6,8 +6,9 @@ import { AllAccessoryComponent } from './all-accessory/all-accessory.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import { ProductAccessoryComponent } from './product-accessory/product-accessory.component';
-import { ProdutAccesssoryComponent } from './produt-accesssory/produt-accesssory.component';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersComponent } from './orders/orders.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     MainProductComponent,
     ProductAccessoryComponent,
-    ProdutAccesssoryComponent
+    OrdersComponent,
+
   ],
   imports: [
     BrowserModule,

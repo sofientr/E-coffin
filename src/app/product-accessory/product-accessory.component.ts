@@ -34,12 +34,10 @@ export class ProductAccessoryComponent implements OnInit {
   buyAccessory(i: number) {
     if (this.Accessorys[i].quantity > 0)
       this.Accessorys[i].quantity -= 1;
-    console.log("test");
   }
   buyAccessory2(p: Accessory) {
     if (p.quantity > 0)
       p.quantity -= 1;
-    console.log("test");
   }
   getcolor(i: number) {
     if (i < 5) return 'yellow';
@@ -47,7 +45,6 @@ export class ProductAccessoryComponent implements OnInit {
   }
   ngOnInit(): void { //this.Accessorys =this.as.getAccessorys();
     this.as.getAccessorysJson().subscribe(next => this.Accessorys = next);
-    console.log(this.Accessorys)
   }
   addAccessory(p: Accessory) {
     this.Accessorys.push(p);
@@ -62,5 +59,10 @@ export class ProductAccessoryComponent implements OnInit {
   finishOrder() {
     this.orderFinished = true;
     this.onOrderFinished.emit({ orderFinished: this.orderFinished, total: this.total });
+  }
+  onPercentChange(percent: number) {
+    console.log(percent);  
+
+    //this.percent = percent;
   }
 }

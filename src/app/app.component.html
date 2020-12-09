@@ -9,9 +9,8 @@
       <app-product-accessory [acc]= "Accessorys" (onOrderFinished)="finishOrder($event)"  [hidden]="orderFinished"></app-product-accessory>
     </div>
   </div>
-</div>
 
 <app-all-accessory (accAdded)="accAdded($event) " [hidden]="orderFinished"  ></app-all-accessory>
 
-<app-orders [hidden]="!orderFinished"></app-orders>
+<app-orders  *ngIf="orderFinished" [ProductOrder]="Accessorys"></app-orders>
  

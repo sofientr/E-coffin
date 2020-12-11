@@ -18,13 +18,13 @@
 												<div class="col-4 col-lg-3 col-xl-2">
 													<div class="row">
 														<a href="cateview.php" class="w-100">
-															<img src="http://placehold.it/100x100" class="mx-auto d-block mb-1 addcartimg">
+															<img src={{a.product.image}} class="mx-auto d-block mb-1 addcartimg">
 														</a>
 													</div>
 												</div>
 												<div class="col-8 col-lg-9 col-xl-10">
 													<div class="d-block text-truncate mb-1">
-														<a href="cateview.php" class="cartproname">{{a.name }}</a>
+														<a href="cateview.php" class="cartproname">{{a.product.name }}</a>
 													</div>
 
 													<div class="cartviewprice d-block">
@@ -40,7 +40,7 @@
 														<div class="input-group-prepend">
 															<button type="button" class="btn btn-sm btn-qty"><i class="fa fa-minus"></i></button>
 														</div>
-														<input type="text" class="form-control form-control-sm text-center" id="" aria-describedby="" value="8"  required>
+														<input type="text" class="form-control form-control-sm text-center" id="" aria-describedby="" value={{a.quantity}}  required>
 														<div class="input-group-append">
 															<button type="button" class="btn btn-sm btn-qty"><i class="fa fa-plus"></i></button>
 														</div>

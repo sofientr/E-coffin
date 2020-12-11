@@ -1,0 +1,18 @@
+<form [formGroup]="profileForm"(ngSubmit)="onSubmit()" [hidden]="isadmin">
+  
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+  
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+  
+  </form>
+  <app-crud-product *ngIf="!isadmin"></app-crud-product>
+  <app-add-acc></app-add-acc>
+

@@ -16,53 +16,43 @@
   "profile": {
     "name": "typicode"
   },
-  "accessory":[
+  "accessory": [
     {
-      "id":1,
-      "name":"firstAccessory",
+      "id": 2,
+      "name": "secondeAccessorys",
       "price": 30.5,
-      "quantity":2,
-      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
-
-    },    {
-      "id":2,
-      "name":"secondeAccessory",
-      "price": 30.5,
-      "quantity":2,
-      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
-
-    },    {
-      "id":3,
-      "name":"thrirdAccessory",
-      "price": 30.5,
-      "quantity":2,
-      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
-      
-    }
-
-  ]
-  ,
-  "ProductAccessory":[
+      "quantity": 2,
+      "image": "https://cdn.imageupload.workers.dev/hCpeJz8i_couffin-pasteka.jpg"
+    },
     {
-      "id":1,
-      "name":"firstAccessory",
-      "price": 30.5,
-      "quantity":2,
-      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
-
-    },    {
-      "id":2,
-      "name":"firstAccessory",
-      "price": 30.5,
-      "quantity":2,
-      "image":"https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
-      
+      "id": 3,
+      "name": "thrirdAccessory",
+      "price": "654",
+      "quantity": 2,
+      "image": "https://cdn.imageupload.workers.dev/hCpeJz8i_couffin-pasteka.jpg"
+    },
+    {
+      "id": "4",
+      "name": "test",
+      "price": "54",
+      "quantity": 3
     }
-    
   ],
-  "orders":[
-    
-  ]
-
-
+  "ProductAccessory": [
+    {
+      "id": 1,
+      "name": "firstAccessory",
+      "price": 30.5,
+      "quantity": 2,
+      "image": "https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
+    },
+    {
+      "id": 2,
+      "name": "firstAccessory",
+      "price": 30.5,
+      "quantity": 2,
+      "image": "https://image.freepik.com/psd-gratuit/t-shirts-noirs-maquettes-devant-dos-utilises-comme-modele-conception_34168-864.jpg"
+    }
+  ],
+  "orders": []
 }

@@ -1,0 +1,11 @@
+<app-main-product [hidden]="orderFinished"></app-main-product>
+<p>testest</p>
+
+<app-product-accessory #shoppingCartC [acc]= "Accessorys" (onOrderFinished)="finishOrder($event)"  [hidden]="orderFinished" ></app-product-accessory>
+
+
+
+<app-all-accessory #productsC (accAdded)="accAdded($event) " [hidden]="orderFinished"  ></app-all-accessory>
+
+<app-orders #ordersC *ngIf="orderFinished" [ProductOrder]="Accessorys"></app-orders>
+<button (click)="reset()"></button>

@@ -1,17 +1,3 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <app-main-product>
-      </app-main-product>
-    </div>
-    <div class="col">
-      <app-product-accessory #shoppingCartC [acc]= "Accessorys" (onOrderFinished)="finishOrder($event)"  [hidden]="orderFinished" ></app-product-accessory>
-    </div>
-  </div>
 
-<app-all-accessory #productsC (accAdded)="accAdded($event) " [hidden]="orderFinished"  ></app-all-accessory>
-
-<app-orders #ordersC *ngIf="orderFinished" [ProductOrder]="Accessorys"></app-orders>
-<button (click)="reset()"></button>
- 
+ <router-outlet></router-outlet> 

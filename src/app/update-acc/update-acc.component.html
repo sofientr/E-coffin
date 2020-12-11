@@ -1,0 +1,34 @@
+<p>reactive-form works!</p>
+
+<!--<form [formGroup]="productform">
+    Id <input type="text" formControlName="id" /> <br>
+    <div *ngIf="productform.get('id').invalid">Id Obligatoir</div>
+    Title <input type="text"  formControlName="title" /> <br>
+    Price <input type="text"  formControlName="price" /> <br>
+    Quantity <input type="text"  formControlName="quantity" /> <br>
+
+ <button (click)="debug()">Debug</button>
+   <button type="submit" [disabled]="productform.invalid">Modifier</button>
+</form> -->
+
+<form [formGroup]="productform" (ngSubmit)="updateProduct()">
+    Id <input type="text" formControlName="id" [(ngModel)]="p.id" disabled />
+     <div *ngIf="productform.get('id').invalid">id obligatoir </div>
+      <br>
+     Title <input type="text" formControlName="name" [(ngModel)]="p.name" />
+     <div *ngIf="productform.get('name').invalid">
+         <div *ngIf="productform.get('name').touched && productform.get('name').errors.required">Title obligatoire </div>
+     <div *ngIf="productform.get('name').errors.minlength">minlength=3 </div>
+     </div>
+     <br>
+     price <input type="text" formControlName="price" [(ngModel)]="p.price"/> 
+     <div *ngIf="priceProduct.invalid">price obligatoir </div>
+     <br>
+     qauntity <input type="text" formControlName="quantity" [(ngModel)]="p.quantity" />
+     <div *ngIf="quantityProduct.invalid">
+         <div *ngIf="quantityProduct.touched && quantityProduct.errors.required">Title obligatoire </div>
+     <div *ngIf="quantityProduct.errors.pattern"> valeur > 0 </div>
+     </div>
+      <br>
+     <button type="submit" [disabled]="productform.invalid">Modifier</button>
+ </form>

@@ -1,0 +1,45 @@
+<p>form-product works!</p>
+<form>
+  test : <input type="text" name="test" ngModel #x="ngModel" />
+</form>
+<form #f="ngForm" (ngSubmit)="addProduct()">
+  <div class="form-group">
+    <label>Id</label>
+    <input type="number" name="idProduct" class="form-control col-md-3" [(ngModel)]="product.id" #i="ngModel" required>
+    <div class="alert alert-danger" [hidden]="!i.invalid">
+      id is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Title</label>
+    <input class="form-control col-md-3" type="text" name="title" [(ngModel)]="product.name" #t="ngModel" required
+      minlength="3" />
+    <!--- <div *ngIf="t.touched && t.invalid"> title invalid </div>---->
+    <div *ngIf="t.invalid" class="alert alert-danger">
+      <div *ngIf="t.touched && t.errors.required">title obligatoire</div>
+      <div *ngIf="t.errors.minlength">minlength = 3</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Id</label>
+    <input class="form-control col-md-3" type="text" name="id" [(ngModel)]="product.id" #id="ngModel" required>
+    <div *ngIf="id.touched && id.invalid" class="alert alert-danger"> id obligatoire </div>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input class="form-control col-md-3" type="text" name="price" [(ngModel)]="product.price" #p="ngModel" required>
+    <div *ngIf="p.touched && p.invalid" class="alert alert-danger"> price obligatoire </div>
+  </div>
+  <div class="form-group">
+    <label>Quantity</label>
+    <input class="form-control col-md-3" type="number" name="quantity" [(ngModel)]="product.quantity" #qu="ngModel"
+      required pattern="[1-9][0-9]*">
+    <div *ngIf="qu.invalid" class="alert alert-danger">
+      <div *ngIf="qu.touched && qu.errors.required"> quantity obligatoire </div>
+      <div *ngIf="qu.errors.pattern"> quantity doit être > 0 </div>
+    </div>
+  </div>
+  <button class="btn btn-warning" type="submit" [disabled]="f.invalid">Save</button>
+  <!--<button class="btn btn-warning" [disabled]="f.invalid" (click)="save()">save</button> -->
+</form>
+

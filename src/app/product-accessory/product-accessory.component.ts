@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Accessory } from '../model/Accessory/Accessory.module';
+import { ProductOrder } from '../model/accessory/OrderAccessory';
 import { ProductAccessoryService } from '../shared/product-accessory.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProductAccessoryComponent implements OnInit {
   total: number = 10;
 
   @Output() onOrderFinished: EventEmitter<{ orderFinished: boolean, total: number }>;
-  @Input(('acc')) data: Accessory;
+  @Input(('acc')) data: ProductOrder[]=[];
   first: number = 5;
   Accessorys: Accessory[] = [
     //   {id: 1, title: "T-shirt 1", price: 18, quantity: 5, like: 0}, 

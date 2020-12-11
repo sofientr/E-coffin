@@ -5,12 +5,13 @@ import { Accessory } from "../model/accessory//accessory.module"
 import { ProductOrder } from '../model/accessory/OrderAccessory';
 import { ProductOrders } from '../model/accessory/ProductOrder';
 
+
 @Component({
-  selector: 'app-all-accessory',
-  templateUrl: './all-accessory.component.html',
-  styleUrls: ['./all-accessory.component.css']
+  selector: 'app-crud-product',
+  templateUrl: './crud-product.component.html',
+  styleUrls: ['./crud-product.component.css']
 })
-export class AllAccessoryComponent implements OnInit {
+export class CrudProductComponent implements OnInit {
   productOrders: ProductOrder[]=[];
   private shoppingCartOrders: ProductOrders;
   productSelected: boolean = false;
@@ -65,14 +66,14 @@ export class AllAccessoryComponent implements OnInit {
   }
   updateListe(list: Accessory[]) {
     this.Accessorys = list;
-  }
+  }*/
 
   deleteP(p: Accessory) {
-    this.as.deleteAccessory(p).subscribe(next => this.as.getAccessorysJson().subscribe(next => this.Accessorys = next));
+    this.as.deleteAccessory(p).subscribe(next => this.as.getAccessorys().subscribe(next => this.Accessorys = next));
   }
   addAccToMain(a: Accessory) {
     console.log(a);
-  }*/
+  }
 
   addToMainProduct(Accessory: Accessory) {
     const index = this.Accessorys.indexOf(Accessory, 0);
@@ -90,5 +91,6 @@ export class AllAccessoryComponent implements OnInit {
     this.loadOrders();
     this.productSelected = false;*/
 }
+
 
 }

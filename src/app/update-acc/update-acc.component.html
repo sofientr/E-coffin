@@ -1,34 +1,65 @@
-<p>reactive-form works!</p>
+<div class="content ">
+  <form [formGroup]="productform" (ngSubmit)="updateProduct()">
+    <div class="form-group">
+      <label>id</label>
+      <input type="text" class="form-control" formControlName="id" [(ngModel)]="p.id" disabled />
+      <div class="invalid-feedback" *ngIf="productform.get('id').invalid">id obligatoir </div>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" formControlName="name" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"  [(ngModel)]="p.name"/>
+      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required"> Name is required</div>
+      </div>
+    </div>
 
-<!--<form [formGroup]="productform">
-    Id <input type="text" formControlName="id" /> <br>
-    <div *ngIf="productform.get('id').invalid">Id Obligatoir</div>
-    Title <input type="text"  formControlName="title" /> <br>
-    Price <input type="text"  formControlName="price" /> <br>
-    Quantity <input type="text"  formControlName="quantity" /> <br>
+    <div class="form-group">
+        <label>price</label>
+        <input type="number" formControlName="price" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.price.errors }" [(ngModel)]="p.price" />
+        <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+          <div *ngIf="f.price.errors.required"> price is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>quantity</label>
+        <input type="number" formControlName="quantity" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }" [(ngModel)]="p.quantity" />
+        <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+          <div *ngIf="f.quantity.errors.required"> price is required</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>discount</label>
+        <input type="number" formControlName="discount" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.discount.errors }"  [(ngModel)]="p.discount"/>
+        <div *ngIf="submitted && f.discount.errors" class="invalid-feedback">
+          <div *ngIf="f.discount.errors.required"> price is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>image</label>
+        <input type="text" formControlName="image" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.discount.errors }"  [(ngModel)]="p.image"/>
+        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+          <div *ngIf="f.image.errors.required"> price is required</div>
+        </div>
+      </div>
+<!--
+    <div class="form-group">
+      <label>qauntity</label>
+      <input type="number" class="form-control" formControlName="quantity" [(ngModel)]="p.quantity" />
+      <div *ngIf="quantityProduct.invalid">
+        <div *ngIf="quantityProduct.touched && quantityProduct.errors.required">Title obligatoire </div>
+        <div *ngIf="quantityProduct.errors.pattern"> valeur > 0 </div>
+      </div>
 
- <button (click)="debug()">Debug</button>
-   <button type="submit" [disabled]="productform.invalid">Modifier</button>
-</form> -->
+    </div>
+-->
+    <button type="submit">Modifier</button>
+  </form>
 
-<form [formGroup]="productform" (ngSubmit)="updateProduct()">
-    Id <input type="text" formControlName="id" [(ngModel)]="p.id" disabled />
-     <div *ngIf="productform.get('id').invalid">id obligatoir </div>
-      <br>
-     Title <input type="text" formControlName="name" [(ngModel)]="p.name" />
-     <div *ngIf="productform.get('name').invalid">
-         <div *ngIf="productform.get('name').touched && productform.get('name').errors.required">Title obligatoire </div>
-     <div *ngIf="productform.get('name').errors.minlength">minlength=3 </div>
-     </div>
-     <br>
-     price <input type="text" formControlName="price" [(ngModel)]="p.price"/> 
-     <div *ngIf="priceProduct.invalid">price obligatoir </div>
-     <br>
-     qauntity <input type="text" formControlName="quantity" [(ngModel)]="p.quantity" />
-     <div *ngIf="quantityProduct.invalid">
-         <div *ngIf="quantityProduct.touched && quantityProduct.errors.required">Title obligatoire </div>
-     <div *ngIf="quantityProduct.errors.pattern"> valeur > 0 </div>
-     </div>
-      <br>
-     <button type="submit" [disabled]="productform.invalid">Modifier</button>
- </form>
+
+</div>

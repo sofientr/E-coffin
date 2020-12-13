@@ -14,7 +14,8 @@ export class AllAccessoryComponent implements OnInit {
   productOrders: ProductOrder[]=[];
   private shoppingCartOrders: ProductOrders;
   productSelected: boolean = false;
-  
+  title = 'Angular Search Using ng2-search-filter';
+  searchText;
 
   x: number = 8;
   inputval: number;
@@ -29,25 +30,11 @@ export class AllAccessoryComponent implements OnInit {
   }
 
 
-  buyAccessory(i: number) {
-    if (this.Accessorys[i].quantity > 0)
-      this.Accessorys[i].quantity -= 1;
-    console.log("test");
-  }
-  buyAccessory2(p: Accessory) {
-    if (p.quantity > 0)
-      p.quantity -= 1;
-    console.log("test");
-  }
-  getcolor(i: number) {
-    if (i < 5) return 'yellow';
-    else return 'green';
-  }
+
   ngOnInit(): void { //this.Accessorys =this.as.getAccessorys();
     this.productOrders =[];
     this.loadProducts();
     this.loadOrders();
-    console.log(this.Accessorys)
   }
 
   loadOrders(){

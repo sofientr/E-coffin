@@ -15,6 +15,8 @@ import { CrudProductComponent } from './crud-product/crud-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UpdateAccComponent } from './update-acc/update-acc.component';
 import { AddAccComponent } from './add-acc/add-acc.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 @NgModule({
@@ -33,6 +35,7 @@ import { AddAccComponent } from './add-acc/add-acc.component';
 
   ],
   imports: [
+     Ng2SearchPipeModule ,
     BrowserModule,
     FormsModule,
     HttpClientModule,

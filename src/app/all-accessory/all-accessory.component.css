@@ -75,3 +75,10 @@ background: #333333;
 {
     display: flex;
 }
+.bg-div {
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

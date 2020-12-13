@@ -15,5 +15,6 @@ export class Accessory {
 price:number;
 quantity : number;
 image: string;
+discount:number;
 
  }

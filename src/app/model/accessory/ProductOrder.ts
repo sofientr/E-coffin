@@ -12,4 +12,7 @@ import { ProductOrder } from './OrderAccessory';
 })
 export class ProductOrders {
     productOrders: ProductOrder  []=[];
+    nom:string;
+    adresse:string;
+
 }

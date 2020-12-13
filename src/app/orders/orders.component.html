@@ -1,19 +1,41 @@
-
+<div class="content" style="  display: flex;
+justify-content: center;">
 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+    <form [formGroup]="profileForm"(ngSubmit)="finishOrder()">
     <div class="card-header text-center">Shopping Cart</div>
     <div class="card-body">
+        
+  <div class="from-group">
+            <label>
+               Name:
+              <input type="text" class="form-control" formControlName="nom">
+            </label>
+        </div>
+
+        <div class="from-group">
+
+            <label>
+              adresse:
+              <input type="text" formControlName="adresse" class="form-control">
+            </label>
+        
+        </div>
+          
         <h5 class="card-title">Total: ${{total}}</h5>
         <hr>
         <h6 class="card-title">Items bought:</h6>
 
         <ul>
             <li *ngFor="let order of data; ">
-                {{ order.product.name }} - {{ order.quantity}} pcs.
+                {{ order.product.name }} - {{ order.product.quantity}} pcs.
             </li>
         </ul>
 
-        <button class="btn btn-light btn-block" [disabled]="data.length == 0" (click)="finishOrder()"
+        <button class="btn btn-light btn-block" [disabled]="data.length == 0 && !profileForm.valid" 
             >Checkout
         </button>
     </div>
+</form>
+
+</div>
 </div>

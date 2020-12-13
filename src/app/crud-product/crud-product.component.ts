@@ -30,20 +30,7 @@ export class CrudProductComponent implements OnInit {
   }
 
 
-  buyAccessory(i: number) {
-    if (this.Accessorys[i].quantity > 0)
-      this.Accessorys[i].quantity -= 1;
-    console.log("test");
-  }
-  buyAccessory2(p: Accessory) {
-    if (p.quantity > 0)
-      p.quantity -= 1;
-    console.log("test");
-  }
-  getcolor(i: number) {
-    if (i < 5) return 'yellow';
-    else return 'green';
-  }
+
   ngOnInit(): void { //this.Accessorys =this.as.getAccessorys();
     this.productOrders =[];
     this.loadProducts();
@@ -61,12 +48,7 @@ export class CrudProductComponent implements OnInit {
     this.as.getAccessorys().subscribe(next => this.Accessorys = next);
 
   }
- /* addAccessory(p: Accessory) {
-    this.Accessorys.push(p);
-  }
-  updateListe(list: Accessory[]) {
-    this.Accessorys = list;
-  }*/
+
 
   deleteP(p: Accessory) {
     this.as.deleteAccessory(p).subscribe(next => this.as.getAccessorys().subscribe(next => this.Accessorys = next));
@@ -74,23 +56,6 @@ export class CrudProductComponent implements OnInit {
   addAccToMain(a: Accessory) {
     console.log(a);
   }
-
-  addToMainProduct(Accessory: Accessory) {
-    const index = this.Accessorys.indexOf(Accessory, 0);
-    if (index > -1) {
-      this.Accessorys.splice(index, 1);
-    }
-    
-    this.accAdded.emit(Accessory);
-
-  }
-  reset() {
-    /*this.productOrders =[];
-    this.loadProducts();
-    this.ecommerceService.ProductOrders.productOrders =[];
-    this.loadOrders();
-    this.productSelected = false;*/
-}
 
 
 }

@@ -1,48 +1,4 @@
-<!-- <p>crud-product works!</p>
-<p>products works!</p>
-<app-form-product (newproduct)="addProduct($event)"></app-form-product>
-
-
-<button  [ngStyle]="{'color' :'red'}">test NgStyle</button>
-<input type="text" [(ngModel)]="inputval" [ngClass]="'testcss'" />
-
-{{ inputval }}
-
-<p>---------------------------------</p>
-<table class="table table-striped" border="1">
-    <div *ngFor="let p of ProductOrder; let i=index">
-        <tr *ngIf="inputval >= p.price  ">
-        <td>{{ p.id }}</td>
-        <td>{{ p.quantity }}</td>
-        <td>{{ p.title }}</td>
-        <td>{{ p.price }}</td>
-        <td>{{ p.like }}</td>
-
-        <td><button (click)="buyProduct(i)" [disabled]="p.quantity == 0">buy</button></td>
-        <td><button (click)="likeProduct(p)" [style.color]="p.like <5 ? 'red' :'yellow'">Like</button></td>
-        <td><button (click)="likeProduct(p)" [style.background-color]="getcolor(p.like)">Like-Back</button></td>
-        <td><button [ngStyle]="{'background-color' :p.like <5 ? 'red' : 'purple'}">Like-NgStyle</button></td>
-    
-    </tr>
-</div>
-</table>
-
-<p>---------------------------------</p>
--->
-<!--<app-productfils *ngFor="let p of products" [p]="p" [val]="" (liked)="likeProduct(p)" (bought)="buyProduct2($event)"></app-productfils>-->
-<!--<app-test></app-test> 
-<app-form-product (newp)="addProduct($event)" (newlist)="updateListe($event)"></app-form-product>
-<div *ngFor="let p of products">
-
-<a [routerLink]="['/home/detail',p.id]">Details</a>
-<button (click)="deleteP(p)">Supprimer</button>
-<button [routerLink]="['/update',p.id]" >Modifier</button>
-</div>
-
-<router-outlet></router-outlet>-->
-<p>crud-product works!</p>
-
-<div class="container">
+    <div class="container">
 	<div class="row">
 
 
@@ -54,10 +10,10 @@
 				<div class="info">
 	
 					<h3>{{ a.name }}</h3>
-                    <p><span>{{ a.price }} </span> dt {{ a.quantity }}</p>
-                    <a [routerLink]="['/home/detail',a.id]">Details</a>
-                    <button (click)="deleteP(a)">Supprimer</button>
-                    <button [routerLink]="['/update',a.id]" >Modifier</button>
+					<p><span>{{ a.price }} dt </span>  quantity {{ a.quantity }} discount {{a.discount}}</p>
+					<p></p>
+                    <button (click)="deleteP(a)" class="btn btn-outline-danger">Supprimer</button>
+                    <button [routerLink]="['/update',a.id]" class="btn btn-outline-primary" >Modifier</button>
 				</div>
 			</div>
 		</div>

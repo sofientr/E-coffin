@@ -2,6 +2,7 @@ import { Component, OnInit ,Input, OnChanges} from '@angular/core';
 import { ProductOrder } from '../model/accessory/OrderAccessory';
 import { ProductOrders } from '../model/accessory/ProductOrder';
 import { AccessoryService } from '../shared/accessory.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-orders',
@@ -13,7 +14,10 @@ export class OrdersComponent implements OnInit  {
     total: number;
     paid: boolean;
     orderFinished :boolean
-    orders: ProductOrders;
+    profileForm = new FormGroup({
+      nom: new FormControl(''),
+      adresse: new FormControl(''),
+    });
 
 
     @Input('ProductOrder') data: ProductOrder[];
@@ -24,23 +28,30 @@ export class OrdersComponent implements OnInit  {
 
     ngOnInit() {
         this.paid = false;
-        
+        this.calculateTotal()
        /* this.sub = this.ecommerceService.OrdersChanged.subscribe(() => {
             this.orders = this.ecommerceService.ProductOrders;
         });
         this.loadTotal();*/
-        this.calculateTotal();
+        
     }
-    calculateTotal(){
-     this.total = this.data.reduce((counter, { product,quantity }) => true ? counter +=product.price*quantity : counter, 0);
-    }
+
     finishOrder() {
       this.paid = true;
+      this.pay()
+      console.log("order fisnhed")
+      
 
   }
   pay() {
-    this.paid = true;
-    this.ecommerceService.saveOrder(this.orders).subscribe();
+    const result:ProductOrders  = Object.assign({}, this.profileForm.value);
+result.productOrders=this.data
+    console.log(result)
+    this.ecommerceService.saveOrder(result).subscribe();
+}
+calculateTotal(){
+  this.total = this.data.reduce((counter, { product }) => true ? counter +=product.price*product.quantity : counter, 0);
+  console.log(this.total)
 }
 
 

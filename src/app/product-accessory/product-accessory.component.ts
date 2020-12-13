@@ -9,6 +9,7 @@ import { ProductAccessoryService } from '../shared/product-accessory.service';
   styleUrls: ['./product-accessory.component.css']
 })
 export class ProductAccessoryComponent implements OnInit {
+  values = '';
 
   x: number = 8;
   inputval: number;
@@ -61,15 +62,27 @@ export class ProductAccessoryComponent implements OnInit {
     this.orderFinished = true;
     this.onOrderFinished.emit({ orderFinished: this.orderFinished, total: this.total });
   }
-  onPercentChange(percent: number) {
-    console.log(percent);  
 
-    //this.percent = percent;
-  }
   reset() {
     this.orderFinished = false;
     /*this.orders = new ProductOrders();
     this.orders.productOrders =[]    this.loadTotal();*/
     this.total = 0;
+}
+onKey(value , id) { 
+
+
+  let obj = this.data.find((o, i) => {
+    if (o.product.id === id) {
+      o.product.quantity = value;
+        return true; // stop searching
+    }
+});
+this.calculateTotal();
+console.log(this.data)
+}
+calculateTotal(){
+  this.total = this.data.reduce((counter, { product,quantity }) => true ? counter +=product.price*product.quantity : counter, 0);
+  console.log(this.total)
 }
 }

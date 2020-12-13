@@ -1,18 +1,69 @@
-<form [formGroup]="profileForm"(ngSubmit)="onSubmit()" [hidden]="isadmin">
-  
-    <label>
-      First Name:
-      <input type="text" formControlName="firstName">
-    </label>
-  
-    <label>
-      Last Name:
-      <input type="text" formControlName="lastName">
-    </label>
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
 
-  
-  </form>
-  <app-crud-product *ngIf="!isadmin"></app-crud-product>
-  <app-add-acc></app-add-acc>
 
+
+  <div class="container" [hidden]="isadmin">
+  <div class="login-form">
+    <div class="main-div">
+        <div class="panel">
+       <h2>Admin Login</h2>
+       <p>Please enter your email and password</p>
+       </div>
+       <form [formGroup]="profileForm"(ngSubmit)="onSubmit()"  id="Login">
+      
+            <div class="form-group">
+
+    
+                <input type="email" class="form-control" id="inputEmail" formControlName="firstName" placeholder="Email Address">
+    
+            </div>
+    
+            <div class="form-group">
+              
+
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="lastName">
+    
+            </div>
+            <div class="forgot">
+            <a href="reset.html">Forgot password?</a>
+    </div>
+            <button type="submit" class="btn btn-primary"[disabled]="!profileForm.valid">Login</button>
+    
+        </form>
+        </div>
+  
+    </div></div> 
+
+
+    <div class="content">
+    
+    <div *ngIf="isadmin">
+        <button type="button" class="btn btn-primary btn-lg" routerLink="/add" id="btn">add</button>
+
+        <app-crud-product ></app-crud-product>
+
+
+   
+    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;" *ngFor="let a of po; let i=index" >
+    
+    <div class="card-header text-center">Shopping Cart</div>
+    <div class="card-body">
+
+
+        <h5 class="card-title">nom :{{a.nom}} <br/> Address: {{a.adresse}} </h5>
+        <hr>
+        <h6 class="card-title">Items bought:</h6>
+
+        <ul>
+            <li *ngFor="let b of a.productOrders; let i=index">
+                {{ b.product.name }} - {{ b.product.quantity}} pcs.
+            </li>
+        </ul>
+
+    </div>
+
+
+</div>
+   
+</div>
+
+</div>

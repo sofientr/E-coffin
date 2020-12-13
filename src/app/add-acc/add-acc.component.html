@@ -1,45 +1,103 @@
-<p>form-product works!</p>
-<form>
-  test : <input type="text" name="test" ngModel #x="ngModel" />
-</form>
-<form #f="ngForm" (ngSubmit)="addProduct()">
+
+
+
+
+<div class="content">
+
+
+<form class="needs-validation" novalidate #f="ngForm" (ngSubmit)=" f.form.valid && addProduct(f)">
+ 
   <div class="form-group">
-    <label>Id</label>
-    <input type="number" name="idProduct" class="form-control col-md-3" [(ngModel)]="product.id" #i="ngModel" required>
-    <div class="alert alert-danger" [hidden]="!i.invalid">
-      id is required
+    <label>id</label>
+    <input type="number" name="id" class="form-control" [(ngModel)]="product.id" #id="ngModel" [ngClass]="{ 'is-invalid': f.submitted && id.invalid }" required>
+    <div class="invalid-feedback" *ngIf="f.submitted && id.invalid">
+      <p *ngIf="name.errors.required">id is required</p>
     </div>
   </div>
+
   <div class="form-group">
-    <label>Title</label>
-    <input class="form-control col-md-3" type="text" name="title" [(ngModel)]="product.name" #t="ngModel" required
-      minlength="3" />
-    <!--- <div *ngIf="t.touched && t.invalid"> title invalid </div>---->
-    <div *ngIf="t.invalid" class="alert alert-danger">
-      <div *ngIf="t.touched && t.errors.required">title obligatoire</div>
-      <div *ngIf="t.errors.minlength">minlength = 3</div>
+    <label>name</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="product.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required>
+    <div class="invalid-feedback" *ngIf="f.submitted && name.invalid">
+      <p *ngIf="name.errors.required">Name is required</p>
     </div>
   </div>
+
   <div class="form-group">
-    <label>Id</label>
-    <input class="form-control col-md-3" type="text" name="id" [(ngModel)]="product.id" #id="ngModel" required>
-    <div *ngIf="id.touched && id.invalid" class="alert alert-danger"> id obligatoire </div>
-  </div>
-  <div class="form-group">
-    <label>Price</label>
-    <input class="form-control col-md-3" type="text" name="price" [(ngModel)]="product.price" #p="ngModel" required>
-    <div *ngIf="p.touched && p.invalid" class="alert alert-danger"> price obligatoire </div>
-  </div>
-  <div class="form-group">
-    <label>Quantity</label>
-    <input class="form-control col-md-3" type="number" name="quantity" [(ngModel)]="product.quantity" #qu="ngModel"
-      required pattern="[1-9][0-9]*">
-    <div *ngIf="qu.invalid" class="alert alert-danger">
-      <div *ngIf="qu.touched && qu.errors.required"> quantity obligatoire </div>
-      <div *ngIf="qu.errors.pattern"> quantity doit être > 0 </div>
+    <label>price</label>
+    <input type="text" name="price" class="form-control" [(ngModel)]="product.price" #price="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && price.invalid }" required>
+    <div class="invalid-feedback" *ngIf="f.submitted && price.invalid">
+      <p *ngIf="price.errors.required">price is required</p>
     </div>
   </div>
-  <button class="btn btn-warning" type="submit" [disabled]="f.invalid">Save</button>
-  <!--<button class="btn btn-warning" [disabled]="f.invalid" (click)="save()">save</button> -->
+
+  <div class="form-group">
+    <label>quantity</label>
+    <input type="number" name="quantity" class="form-control" [(ngModel)]="product.quantity"  #quantity="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && quantity.invalid }"  required>
+    <div class="invalid-feedback" *ngIf="f.submitted && quantity.invalid">
+      <p *ngIf="quantity.errors.required">quantity is required</p>
+    </div>
+  </div> 
+  <div class="form-group">
+    <label>discount</label>
+    <input type="number" name="discount" class="form-control" [(ngModel)]="product.discount"   #discount="ngModel"  [ngClass]="{ 'is-invalid': f.submitted && discount.invalid }"  required>
+    <div class="invalid-feedback" *ngIf="f.submitted && quantity.invalid">
+      <p *ngIf="discount.errors.required">discount is required</p>
+    </div>
+  </div> 
+  <div class="form-group">
+    <label>image</label>
+    <input type="text" name="quantity" class="form-control" [(ngModel)]="product.image" required>
+  </div> 
+
+
+
+  <button class="btn btn-primary" type="submit ">Submit form </button>
 </form>
 
+</div>
+<!--
+<form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="model.name" #name="ngModel"
+      [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+    <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
+      <p *ngIf="name.errors.required">Name is required</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"
+      [ngClass]="{ 'is-invalid': userForm.submitted && email.invalid }" email required>
+    <div *ngIf="userForm.submitted && email.invalid" class="invalid-feedback">
+      <div *ngIf="email.errors.required">Email is required</div>
+      <div *ngIf="email.errors.email">Must be a valid email address</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel"
+      [ngClass]="{ 'is-invalid': userForm.submitted && password.invalid }" minlength="8" required>
+    <div *ngIf="userForm.submitted && password.invalid" class="invalid-feedback">
+      <div *ngIf="password.errors.required">Password is required</div>
+      <div *ngIf="password.errors.minlength">Password should be at least 8 characters long</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Hobbies</label>
+    <select class="form-control" name="hobbies" [(ngModel)]="hobbies">
+      <option value="">Select an option</option>
+      <option *ngFor="let hoby of Hobbies" [value]="hoby">
+        {{hoby}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-danger btn-block">Submit</button>
+  </div>
+</form>-->

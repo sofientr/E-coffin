@@ -15,35 +15,41 @@ export class UpdateAccComponent implements OnInit {
   productform : FormGroup;
   productform2 : FormGroup;
   p : Accessory = new Accessory();
+  submitted = false;
+
   fbuilder : FormBuilder = new FormBuilder();
   constructor(private ac:ActivatedRoute, private ps:AccessoryService, private _router:Router) { }
   paramId : string;
   ngOnInit(): void {
     
-   /* this.productform = new FormGroup({
-      id : new FormControl('',Validators.required),
-      price : new FormControl('',Validators.required),
-      quantity :  new FormControl('',[Validators.required, Validators.pattern("[1-9][0-9]*")]),
-      title : new FormControl('',[Validators.required, Validators.minLength(3)])
-    })*/
+
     this.productform = this.fbuilder.group({
       id : ['',Validators.required],
       price : ['',Validators.required],
-      quantity :  ['',[Validators.required, Validators.pattern("[1-9][0-9]*")]],
-      name : ['',[Validators.required, Validators.minLength(3)]]
+      quantity :  ['',[Validators.required]],
+      name : ['',[Validators.required]],
+      discount:['',[Validators.required]],
+      image:['',[Validators.required]],
+
     })
     this.ac.paramMap.subscribe(res=>{this.paramId=res.get('id');
     this.ps.getAccessoryById(Number(res.get('id'))).subscribe(res=>this.p=res)});
   
   }
-  
+  get f() { return this.productform.controls; }
+
   debug(){
     console.log(this.productform);
   }
   updateProduct(){
-    //this.list.push(this.p);
-    //this.p=new Product();
-   /// console.log(this.list);
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.productform.invalid) {
+        return;
+    }
+
+
    this.ps.updateAccessory(Number(this.paramId),this.p).subscribe(res=>this._router.navigateByUrl("/second-component"));
   
   

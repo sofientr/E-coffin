@@ -1,28 +1,30 @@
-<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">Baeldung Ecommerce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbarResponsive" aria-controls="navbarResponsive"
-          aria-expanded="false" aria-label="Toggle navigation"
-          (click)="toggleCollapsed()">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbarResponsive"
-           [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#" (click)="reset()">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="/assets/coffinlogo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+      <div class="fontt">sofCoffin</div>
+   
 
-<nav>
-    <ul>
-      <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
-      <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" routerLink="/first-component" routerLinkActive="active">order<span class="sr-only">(current)</span></a>
+          
+        </li>
+        <li class="nav-item">
+          
+          <a class="nav-link" routerLink="/second-component" routerLinkActive="active">login</a>
+        </li>
+     
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
   </nav>

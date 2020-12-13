@@ -17,7 +17,7 @@ export class AddAccComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addProduct(){
+  addProduct(form){
     console.log(this.product);
     this.ps.addAccessory(this.product).subscribe();
   }

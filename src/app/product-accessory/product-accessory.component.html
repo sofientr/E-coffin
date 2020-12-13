@@ -1,9 +1,9 @@
 
-	<div class="container-fluid mt-3 mb-4">
+	<div class="" style="margin: auto; margin-top: 90px; ">
 
-		<div class="col-lg-12">
-			<div class="row">
-				<div class="col-lg-9 px-0 pr-lg-2 mb-2 mb-lg-0">
+		
+			
+				<div class="col-16">
 					<div class="card border-light bg-white card proviewcard shadow-sm">
 						<div class="card-header">My Cart</div>
 						<div class="card-body">
@@ -24,13 +24,14 @@
 												</div>
 												<div class="col-8 col-lg-9 col-xl-10">
 													<div class="d-block text-truncate mb-1">
-														<a href="cateview.php" class="cartproname">{{a.product.name }}</a>
+														<a href="cateview.php" class="cartproname">{{a.product.name }} </a>
 													</div>
 
 													<div class="cartviewprice d-block">
-														<span class="amt">{{a.price}} dt</span>
-														<span class="oldamt">5 dt</span>
-														<span class="disamt">28% off</span>
+														<span class="amt">{{a.product.price - (a.product.price*a.product.discount)/100 }} dt</span>
+														<span class="oldamt">{{a.product.price}} dt</span>
+														<span class="disamt">{{a.product.discount}}% off</span>
+														
 													</div>
 												</div>
 											</div>
@@ -40,7 +41,7 @@
 														<div class="input-group-prepend">
 															<button type="button" class="btn btn-sm btn-qty"><i class="fa fa-minus"></i></button>
 														</div>
-														<input type="text" class="form-control form-control-sm text-center" id="" aria-describedby="" value={{a.quantity}}  required>
+														<input type="text"  #box (keyup)="onKey(box.value,a.product.id)" class="form-control form-control-sm text-center" id="" aria-describedby="" value={{a.quantity}}  required>
 														<div class="input-group-append">
 															<button type="button" class="btn btn-sm btn-qty"><i class="fa fa-plus"></i></button>
 														</div>
@@ -52,6 +53,7 @@
 										<div class="col-lg-3 ml-lg-auto align-self-start mt-2 mt-lg-0">
 											<div class="row">
 												<div class="prostatus">
+													
 													<span class="del-time">Delivered <span>2-3 Business Days</span></span>
 												</div>
 											</div>
@@ -71,7 +73,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			
+		
 
 	</div>

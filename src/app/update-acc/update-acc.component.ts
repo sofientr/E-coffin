@@ -51,6 +51,8 @@ export class UpdateAccComponent implements OnInit {
 
 
    this.ps.updateAccessory(Number(this.paramId),this.p).subscribe(res=>this._router.navigateByUrl("/second-component"));
+   window.alert ("prduct updateted ");
+
   
   
   }

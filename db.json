@@ -18,17 +18,9 @@
   },
   "accessory": [
     {
-      "image": "https://i.ibb.co/ZYLd1Gv/124096431-381686099844203-2913379388327367006-ot.jpg",
-      "id": 6,
-      "name": "test2",
-      "price": "25",
-      "quantity": "30",
-      "discount": 20
-    },
-    {
       "image": "https://i.ibb.co/0V69jCV/couffin-trendy-en-nattey.jpg",
       "id": 7,
-      "name": "test3",
+      "name": "acc2",
       "price": "25",
       "quantity": "30",
       "discount": 10
@@ -36,10 +28,18 @@
     {
       "image": "https://i.ibb.co/pxZK58H/couffin-pasteka-acc.jpg",
       "id": 9,
-      "name": "test8",
+      "name": "acc3",
       "price": "25",
       "quantity": "30",
       "discount": 50
+    },
+    {
+      "image": "https://i.ibb.co/c3n54dm/couf7d.jpg",
+      "name": "bandouliére",
+      "price": "20",
+      "quantity": 10,
+      "discount": 10,
+      "id": 8
     }
   ],
   "ProductAccessory": [
@@ -230,6 +230,169 @@
         }
       ],
       "id": 6
+    },
+    {
+      "nom": "sofien",
+      "adresse": "sfax",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/0V69jCV/couffin-trendy-en-nattey.jpg",
+            "id": 7,
+            "name": "test3",
+            "price": "25",
+            "quantity": "2",
+            "discount": 10
+          },
+          "quantity": 0
+        },
+        {
+          "product": {
+            "image": "https://i.ibb.co/ZYLd1Gv/124096431-381686099844203-2913379388327367006-ot.jpg",
+            "id": 6,
+            "name": "test2",
+            "price": "25",
+            "quantity": "1",
+            "discount": 20
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 7
+    },
+    {
+      "nom": "sofien",
+      "adresse": "testt",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/0V69jCV/couffin-trendy-en-nattey.jpg",
+            "id": 7,
+            "name": "acc2",
+            "price": "25",
+            "quantity": "30",
+            "discount": 10
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 8
+    },
+    {
+      "nom": "",
+      "adresse": "",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/0V69jCV/couffin-trendy-en-nattey.jpg",
+            "id": 7,
+            "name": "acc2",
+            "price": "25",
+            "quantity": "2",
+            "discount": 10
+          },
+          "quantity": 0
+        },
+        {
+          "product": {
+            "image": "https://i.ibb.co/pxZK58H/couffin-pasteka-acc.jpg",
+            "id": 9,
+            "name": "acc3",
+            "price": "25",
+            "quantity": "3",
+            "discount": 50
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 9
+    },
+    {
+      "nom": "sofien",
+      "adresse": "sfax",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/0V69jCV/couffin-trendy-en-nattey.jpg",
+            "id": 7,
+            "name": "acc2",
+            "price": "25",
+            "quantity": "2",
+            "discount": 10
+          },
+          "quantity": 0
+        },
+        {
+          "product": {
+            "image": "https://i.ibb.co/pxZK58H/couffin-pasteka-acc.jpg",
+            "id": 9,
+            "name": "acc3",
+            "price": "25",
+            "quantity": "2",
+            "discount": 50
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 10
+    },
+    {
+      "nom": "sofien",
+      "adresse": "tunis",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/c3n54dm/couf7d.jpg",
+            "name": "bandouliére",
+            "price": "20",
+            "quantity": 10,
+            "discount": 10,
+            "id": 8
+          },
+          "quantity": 0
+        },
+        {
+          "product": {
+            "image": "https://i.ibb.co/pxZK58H/couffin-pasteka-acc.jpg",
+            "id": 9,
+            "name": "acc3",
+            "price": "25",
+            "quantity": "30",
+            "discount": 50
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 11
+    },
+    {
+      "nom": "sofien",
+      "adresse": "tunis",
+      "productOrders": [
+        {
+          "product": {
+            "image": "https://i.ibb.co/c3n54dm/couf7d.jpg",
+            "name": "bandouliére",
+            "price": "20",
+            "quantity": 10,
+            "discount": 10,
+            "id": 8
+          },
+          "quantity": 0
+        },
+        {
+          "product": {
+            "image": "https://i.ibb.co/pxZK58H/couffin-pasteka-acc.jpg",
+            "id": 9,
+            "name": "acc3",
+            "price": "25",
+            "quantity": "30",
+            "discount": 50
+          },
+          "quantity": 0
+        }
+      ],
+      "id": 12
     }
   ]
 }

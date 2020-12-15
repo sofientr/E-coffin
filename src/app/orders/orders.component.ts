@@ -39,7 +39,7 @@ export class OrdersComponent implements OnInit  {
     finishOrder() {
       this.paid = true;
       this.pay()
-      console.log("order fisnhed")
+      window.alert ("Ordre finished");
       
 
   }

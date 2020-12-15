@@ -33,18 +33,6 @@ export class ProductAccessoryComponent implements OnInit {
   }
 
 
-  buyAccessory(i: number) {
-    if (this.Accessorys[i].quantity > 0)
-      this.Accessorys[i].quantity -= 1;
-  }
-  buyAccessory2(p: Accessory) {
-    if (p.quantity > 0)
-      p.quantity -= 1;
-  }
-  getcolor(i: number) {
-    if (i < 5) return 'yellow';
-    else return 'green';
-  }
   ngOnInit(): void { //this.Accessorys =this.as.getAccessorys();
     this.as.getAllAccessorys().subscribe(next => this.Accessorys = next);
   }

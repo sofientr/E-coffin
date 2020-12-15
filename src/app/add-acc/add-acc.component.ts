@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 import { Accessory } from '../model/Accessory/Accessory.module';
 import { AccessoryService } from '../shared/accessory.service';
 
@@ -12,7 +13,7 @@ export class AddAccComponent implements OnInit {
   product : Accessory = new Accessory();
 
 
-  constructor( private ps:AccessoryService) { }
+  constructor( private ps:AccessoryService ,private _router:Router ) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,9 @@ export class AddAccComponent implements OnInit {
   addProduct(form){
     console.log(this.product);
     this.ps.addAccessory(this.product).subscribe();
+    window.alert ("prduct saved ");
+    
+    
   }
 
   
